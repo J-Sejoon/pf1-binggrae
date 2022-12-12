@@ -101,7 +101,7 @@ body {
   color: #fff;
   line-height: 2.2;
   cursor: pointer;
-  
+  border:none;
 }
 #title ul.hash {
   display: flex;
