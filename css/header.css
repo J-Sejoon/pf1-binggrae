@@ -1,0 +1,189 @@
+body{
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: #f9fcfe;
+}
+header{
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  }
+header::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    border: 1px solid #eee;
+    left: 0;
+    top: 25px;
+    z-index: 1;
+    box-sizing: border-box;
+  }
+    header div.inner{ /*하위선택자*/
+    display: flex;
+    justify-content: space-between;
+    height: 88px;
+    align-items: center;
+    position: relative;
+    /*! background: #eee; */
+    margin-top: 28px;
+    }
+
+      header .inner h1 a {
+        background-image: url(../img/logo-pc.png);
+        width: 142px;
+        height: 35px;
+        display: block;
+        font-size: 0;
+        margin-bottom: 30px;
+      }
+
+      header .inner ul.gnb {
+      display: flex;
+      align-self: flex-start;
+      }
+      
+      
+      header .inner ul.gnb::before{
+        content: "";
+        background-color: white;
+        width: 105%;
+        height: 0px;
+        position: absolute;
+        left: -2.5%;
+        top: -28px;
+        z-index: -1;       
+        transition: all 500ms;
+      }
+      header .inner ul.gnb::after{
+        content: "";
+        width: 105%;
+        height: 0px;
+        position: absolute;
+        left: -2.5%;
+        top: 65px;        
+        z-index: -1;
+        border: 1px solid #eee;
+        display: none;
+      }
+      header .inner ul.gnb:hover::after{
+        display: block;
+      }
+      header .inner ul.gnb:hover::before{        
+        height: 440px;
+      }
+    
+      header .inner ul.gnb > li > h2 a {
+        font-weight: 400;
+        padding: 20px 16px;
+        display: block;
+        /* line-height: 3; 블럭에게만 적용되는 속성 */
+        font-size: 20px;
+        padding-top: 26.5;
+        position: relative;
+      }
+      header .inner ul.gnb > li > h2::after{
+        content: "";
+        
+      }
+      header .inner ul.gnb > li > h2 a:hover{
+        color: red;
+      }
+      header .inner ul.gnb > li > h2 a::after{        
+        content: "";
+        display: block;
+        width: calc(100% - 32px);
+        border-bottom: 3px solid red;
+        transform: translateY(25px) scaleX(0);
+        position: absolute;
+        left: 16px;
+        transition: all 0.5s;
+        transform-origin: 50%;
+      }
+      header .inner ul.gnb > li:hover > h2 a::after{
+        content: "";
+        display: block;
+        width: calc(100% - 32px);
+        border-bottom: 3px solid red;
+        transform: translateY(25px) scaleX(100%);
+        position: absolute;
+        left: 16px;
+      }
+      /* gnb 서브메뉴 */
+      header .inner ul.gnb li ul.gnbsub{
+        display: none;
+      }
+      header .inner ul.gnb:hover li ul.gnbsub{
+        display: block;
+      }
+      header .inner ul.gnb:hover ul.gnbsub{
+        opacity: 0;
+        animation-name: gnbFadeIn;
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards;
+        animation-delay: 0.5s;
+        margin-top: 16px;
+      }
+      @keyframes gnbFadeIn{
+        0%{
+          opacity: 0;
+        }
+        100%{
+          opacity: 1;          
+        }
+      }
+      
+      header .inner ul.gnb li ul.gnbsub li a{
+        display: block;
+        box-sizing: border-box;
+        padding-top: 20px;
+        text-align: left;
+        margin-left: 20px;
+      }
+      header .inner ul.enb {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 30px;
+      }
+
+      header .inner ul.enb li select {
+        background-color: transparent;
+        border: none;
+      }
+      header .inner ul.enb li a{
+        font-size: 0;
+        width: 20px;
+        height: 13px;
+        display: block;
+        border-top: 3px solid #666;
+        border-bottom: 3px solid #666;
+        display: flex;
+        align-items: center;
+    }
+    header .inner ul.enb li a:hover,header .inner ul.enb li a:hover::before{
+      border-color: red;
+    }
+    header .inner ul.enb li a::before{
+        content: "";
+        width: 100%;
+        display: block;
+        border-top: 3px solid #666;        
+    }
+    
+    header .inner ul.tnb{
+        position: absolute;
+        right: 0;
+        top: 5px;
+        font-size: 14px;
+        display: flex;
+        gap: 14px;
+        top: -24px;
+        
+    }
+    header .inner ul.tnb li a::after{
+        content: "";
+        background-image: url(../img/openarrow.svg);
+        width: 18px;
+        height: 18px;
+        display: inline-block;
+        background-size: contain;
+        vertical-align: -3px;
+    }

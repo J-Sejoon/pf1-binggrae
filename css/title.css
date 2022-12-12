@@ -1,0 +1,115 @@
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+#title {
+  height: 100%;
+  background-image: url(../img/section01_bg.png);
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 700px;
+  position: relative;
+  }
+#title::before{
+  content: "";
+  background-image:url(../img/sec01_logo.png);
+  background-size: cover;
+  width: 1508px;
+  height: 383px;
+  margin-top: 60px;
+
+  display: block;
+}
+#title span{
+  position: absolute;
+  bottom: 20px;
+}
+#title span::before{
+  content: "";
+  width: 20px;
+  height: 20px;
+  display: block;
+  border: 2px solid;
+  border-top: transparent;
+  border-left: transparent;
+  margin: 0 auto;
+  transform: rotate(45deg);
+  margin-bottom: 10px;
+  animation-name: scroll;
+  animation-direction: alternate;
+  animation-duration: 500ms;
+  animation-iteration-count:infinite;
+  
+}
+@keyframes scroll{
+  0%{
+    transform:translateY(0px) rotate(45deg);
+          
+  }
+  100%{
+      transform:translateY(-10px) rotate(45deg);
+      
+  }
+}
+#title span::after{
+  content: "scroll";
+    
+}
+
+#title form.search {
+  width: 700px;
+  background-color: #fff;
+  height: 60px;
+  box-shadow: 2px 0px 10px #ccc;
+  border-radius: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 30px;
+  padding-left: 80px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+#title form.search::before{
+  content: "";
+  background-image: url(../img/search.svg);
+  width: 28px;
+  height: 28px;
+  left:50px;
+  display: inline-block;
+  background-size: cover;
+  position: absolute;
+  
+}
+#title form.search input {
+  width: 70%;
+  border: none;
+  line-height: 1.6;
+  font-size: 17px;   
+}
+#title form.search input:focus{ /*:focus input태그안에 커서를 위치시키는 행위*/
+  outline: none;
+}
+#title form.search button {
+  border-radius: calc(37.4px / 2);
+  width: 180px;
+  background-color: red;
+  font-size: 17px;
+  color: #fff;
+  line-height: 2.2;
+  cursor: pointer;
+  
+}
+#title ul.hash {
+  display: flex;
+  margin-top: 30px;
+  gap: 20px;
+  column-gap: 40px;
+}
+
+#title ul.hash li a:hover {
+  color: yellowgreen;
+}

@@ -1,0 +1,96 @@
+footer {
+    
+  background-color: #000;
+  color: #fff;
+  }
+  footer .inner {
+    height: 380px;
+  box-sizing: border-box;
+  }
+  footer .inner > div {
+    
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  }
+  footer .inner .left {
+    
+  }
+  footer .inner .left h1 {
+    
+  }
+  footer .inner .left h1 a {
+    color: #eee;
+    font-size: 0;
+    background-image: url(../img/logo.png);
+    width: 113px;
+    height: 30px;
+    display: block;
+  }
+  footer .inner .left address {
+    color: #ccc;
+    transform: translateY(-60px);
+  }
+  footer .inner .left p.copyright {
+    color: #fff;
+  }
+  footer .inner .right {
+    align-items: end;
+  }
+  footer .inner .right ul.personal {
+    gap: 20px;
+  }
+  footer .inner .right ul.personal li {
+    
+  }
+  footer .inner .right ul.personal li a {
+    color: #eee;
+  }
+  footer .inner .right .bottom {
+    gap: 50px;
+  }
+  footer .inner .right .bottom ul.sns {
+    gap: 20px;
+  }
+  footer .inner .right .bottom ul.sns li {
+    
+  }
+  footer .inner .right .bottom ul.sns li a {
+    color: #eee;
+  }
+  footer .inner .right .bottom ul.sns li a{
+    color: #eee;
+    font-size: 0;
+    background-image: url(../img/instagram.svg);
+    width: 20px;
+    height: 20px;
+    display: block;    
+  }
+  footer .inner .right .bottom ul.sns li a:hover{
+    background-image: url(../img/instagram-h.svg);
+  }
+  footer .inner .right .bottom ul.sns li:nth-child(2) a{
+    background-image: url(../img/youtube.svg);
+  }
+  footer .inner .right .bottom ul.sns li:nth-child(2) a:hover{
+    background-image: url(../img/youtube-h.svg);
+  }
+  footer .inner .right .bottom ul.sns li:nth-child(3) a{
+    background-image: url(../img/twitter.svg);
+  }
+  footer .inner .right .bottom ul.sns li:nth-child(3) a:hover{
+    background-image: url(../img/twitter-h.svg);
+  }
+  
+  footer .inner .right .bottom > a {
+    color: #eee;    
+  }
+  footer .inner .right .bottom > a::before {
+    content: "";
+    background-image: url(../img/flag_store.png);
+    width: 64px;
+    height: 50px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 13px;
+   }

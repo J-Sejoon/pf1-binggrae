@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>코딩-빙그레</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/title.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            /* 타이틀 검색포커스 */
+            $("#title form.search input").focus(function(){
+                $(this).parent().addClass("focu");
+            });
+            $("#title form.search input").blur(function(){
+                $(this).parent().removeClass("focu");
+            });
+            /* 빙그레맛 리스트 오버 */
+            $("#taste .inner ul.list li a").hover(
+                function(){
+                    $(this).parent().css("box-shadow","2px 2px 5px #ccc"); //this는 이벤트가 발생한 요소를 의미
+                    //parent()앞요소의 부모를 의미
+                },
+                function(){
+                    $(this).parent().css("box-shadow","initial"); 
+                }
+            );
+
+            /* 사이버신고 안전신문고 오버처리 */
+            $("#community .inner > article > a").hover(
+                function(){
+                    $(this).parent().addClass("dropshadow"); //this는 이벤트가 발생한 요소를 의미
+                    //parent()앞요소의 부모를 의미
+                },
+                function(){
+                    $(this).parent().removeClass("dropshadow"); 
+                }
+            );
+        
+
+            // 스크롤이벤트
+            let tasteul=$("#taste .inner ul.list").offset().top; //tasteul의 위치값
+            let shopul=$("#shop .inner ul.list").offset().top;
+            let winH =$(window).height(); //브라우저창 높이값
+            let tasteulH = $("#taste .inner ul.list").height()/2; //tasteul의 높이값
+            let shopulH = $("#shop .inner ul.list").height()/2;
+
+            console.log("tasteul높이값:"+tasteul);
+            $("aside#quick").hide();
+            $(window).on("scroll",function(){
+                console.log($(window).scrollTop());
+                if($(window).scrollTop()>tasteul-winH+tasteulH){ // 1빙그레맛등장
+                    $("#taste .inner ul.list li").addClass("tasteliup delay");
+                }
+                if($(window).scrollTop()<tasteul-winH+tasteulH){ // 1빙그레맛사라짐
+                    $("#taste .inner ul.list li").removeClass("tasteliup delay");
+                }
+                if($(window).scrollTop()>tasteul-winH+tasteulH+tasteulH){ //사이드메뉴등장
+                    $("aside#quick").fadeIn();
+                }
+                if($(window).scrollTop()>shopul-winH+shopulH){ // 2샵등장
+                    $("#shop .inner ul.list li").addClass("tasteliup delay");
+                }
+                if($(window).scrollTop()<shopul-winH+shopulH){ // 2샵사라짐
+                    $("#shop .inner ul.list li").removeClass("tasteliup delay");
+                }
+            });
+            //빙그레맛 오버시 delay없애기
+            $("#taste .inner ul.list li").hover(function(){
+                $(this).removeClass("delay");
+            });
+        });
+        
+        //헤더 스크롤 흰색
+        $(document).ready(function(){
+            $(window).scroll(function(){
+        var scroll = $(window).scrollTop();
+            if (scroll > 1) {
+                $("header").css("background" , "#fff");
+            }
+            else{
+                $("header").css("background" , "none");   
+            }
+            })
+        });
+        </script>
+    <script>
+        $(document).ready(function(){
+        AOS.init();
+        $("body").attr("data-aos-duration","2000");
+        $("[data-aos='fade-up']").css("transform","translate3d(0,30px,0) !important");
+    });
+    </script>
+    </script>
+</head>
+<body>
+    <!--상단영역-->
+<header>
+    <!-- div.inner>(h1>a)+(ul>li*5>a)+ul>li*2 -->
+    <div class="inner">
+        <h1><a href="#">빙그레</a></h1>
+        <ul class="gnb">
+            <li>
+            <h2><a href="#">회사소개</a></h2>
+                <ul class="gnbsub">
+                    <li><a href="#">CEO인사말</a></li>
+                    <li><a href="#">경영이념</a></li>
+                    <li><a href="#">사업분야</a></li>
+                    <li><a href="#">히스토리</a></li>                    
+                </ul>
+            </li>
+            </li>
+            <li>
+            <h2><a href="#">제품소개</a></h2>
+                <ul class="gnbsub">
+                    <li><a href="#">아이스크림</a></li>
+                    <li><a href="#">우유/치즈</a></li>
+                    <li><a href="#">발효유</a></li>
+                    <li><a href="#">커피</a></li>
+                    <li><a href="#">음료</a></li>
+                    <li><a href="#">주스</a></li>
+                    <li><a href="#">스낵/디저트</a></li>
+                    <li><a href="#">건강지향식품</a></li>
+                    <li><a href="#">수출제품</a></li>
+                </ul>
+            </li>
+            </li>
+            <li>
+            <h2><a href="#">지속가능경영</a></h2>
+                <ul class="gnbsub">
+                    <li><a href="#">지속가능경영 체계</a></li>
+                    <li><a href="#">Eco-Friendly</a></li>
+                    <li><a href="#">Shared Value</a></li>
+                    <li><a href="#">Global Integrity</a></li>
+                    <li><a href="#">윤리준법경영</a></li>
+                    <li><a href="#">사회공헌</a></li>
+                    <li><a href="#">보고서 및 정책</a></li>
+                </ul>
+            </li></li>
+            <li>
+            <h2><a href="#">투자정보</a></h2>
+                <ul class="gnbsub">
+                    <li><a href="#">전자공고</a></li>
+                    <li><a href="#">주식정보</a></li>
+                    <li><a href="#">공시정보</a></li>
+                    <li><a href="#">재무정보</a></li>
+                    <li><a href="#">IR 정보</a></li>
+                </ul>
+            </li></li>
+            <li>
+            <h2><a href="#">고객센터</a></h2>
+                <ul class="gnbsub">
+                    <li><a href="#">고객상담</a></li>
+                    <li><a href="#">사이버신고</a></li>
+                    <li><a href="#">안전신문고</a></li>
+                </ul>
+            </li></li>
+        </ul>
+        <ul class="enb">
+            <li>
+                <select name="#" id="#">
+                    <option value="korea" selected>KR</option>
+                    <option value="english">EN</option>
+                    <option value="china">CN</option>
+                </select>
+            </li>
+            <li><a class="ham" href="#">
+                ::before
+                전체메뉴보기
+            </a>
+            </li>
+        </ul>
+        <ul class="tnb">
+            <li><a href="#">구매포털시스템</a></li>
+            <li><a href="#">인재채용</a></li>
+            </ul>
+    </div>
+</header>
+    <!--타이틀영역-->
+    <div id="title">
+        <form action="#" class="search">
+            <input type="text" placeholder="제품명을 입력하세요">
+            <button type="button">search</button>
+        </form>
+        <h2 class="hide">빙그레 해시태그</h2>
+        <ul class="hash">
+            <li><a href="#">#링키바</a></li>
+            <li><a href="#">#더단백</a></li>
+            <li><a href="#">#요플레프로틴</a></li>
+            <li><a href="#">#바나나맛우유</a></li>
+        </ul>
+        <span class="scroll"></span>
+    </div>
+    <!--내용영역-->
+<main>
+    <!--빙그레맛-->
+    <section id="taste">
+        <div class="inner innerPadding flex flexColumn flexAlignCenter">
+            <h2 class="h2">행복한 빙그레의 맛!</h2>
+            <ul class="list flex flexBetween">
+                <li><a href="#">아이스크림</a></li>
+                <li><a href="#">우유/치즈</a></li>
+                <li><a href="#">발효유</a></li>
+                <li><a href="#">커피</a></li>
+                <li><a href="#">음료</a></li>
+                <li><a href="#">주스</a></li>
+            </ul>
+        </div>
+    </section>
+<!--브랜드샵-->
+    <section id="shop">
+        <div class="inner innerPadding flex flexColumn flexAlignCenter">
+            <h2 class="h2">BRAND SHOP</h2>
+            <ul class="list flex flexBetween">
+                <li>
+                    <h3><img src="img/sec02_logo01.png" alt="#"><br />더:단백</h3>
+                    <p class="hide">빙그레 건강 tft의<span class="br"></span> 단백질 전문 브랜드</p>
+                    <a href="#" class="hide">구입하기</a>
+                </li>
+                <li>
+                    <h3><img src="img/sec02_logo02.png" alt="#"><br />아카페라</h3>
+                    <p>부담없는 캐주얼한 커피</p>
+                    <a href="#">구입하기</a>
+                </li>
+                <li>
+                    <h3><img src="img/sec02_logo03.png" alt="#"><br />요플레</h3>
+                    <p>39년 전통의<span class="br"></span> 대한민국 Heritage</p>
+                    <a href="#">구입하기</a>
+                </li>
+                <li>
+                    <h3><img src="img/sec02_logo04.png" alt="#"><br />바나나맛 우유</h3>
+                    <p>대한민국을 대표하는<span class="br"></span> No.1가공우유</p>
+                    <a href="#">구입하기</a>
+                </li>
+                <li>
+                    <h3><img src="img/sec02_logo05.png" alt="#"><br />끌레도르</h3>
+                    <p>진한 맛의 감동<span class="br"></span> 프리미엄 아이스크림</p>
+                    <a href="#">구입하기</a>
+                </li>
+                <li>
+                    <h3><img src="img/sec02_logo06.png" alt="#"><br />마노플랜</h3>
+                    <p>남자를 위한 건강플랜,<span class="br"></span> 마노플랜</p>
+                    <a href="#">구입하기</a>
+                </li>                        
+            </ul>
+        </div>
+    </section>
+    <!--커뮤니티-->
+    <section id="community">
+            <div class="inner innerPadding flex flexCenter flexWrap">
+                <h2 class="hide">community</h2>
+                <article class="cyber flex flexColumn flexBetween padding50">
+                    <h3 class="h3">사이버신고</h3>
+                    <p class="p">빙그레 임직원의 부당한 요구 또는<span class="br"></span> 업무 처리, 기타 부정행위 제보</p>
+                    <a href="#" class="btn1">제보하기</a>
+                </article>
+                <article class="sinmungo flex flexColumn flexBetween padding50">
+                    <h3 class="h3">안전신문고</h3>
+                    <p class="p">빙그레 종사자의 유해·위험요소 및<span class="br"></span> 안전·보건에 관한 의견 제보</p>
+                    <a href="#" class="btn1">제보하기</a>
+                </article>
+            <div class="flex flexBetween flexWrap padding50">
+                <article class="faq">
+                    <h3 class="h3">자주 묻는 질문</h3>
+                    <ul class="flex flexBetween flexWrap">
+                        <li><a href="#">Q.아이스크림에는 왜 유통기한이 없나요?</a></li>
+                        <li><a href="#">Q.구매일이 불분명하고 영수증이 없지만 제품의 유통기한이 지났습니다</a></li>
+                        <li><a href="#">Q.유통기한 뒤에 있는 알파벳 기호는 무엇인가요?</a></li>
+                        <li><a href="#">Q.빙그레는 HACCP 인증을 모두 받았나요?</a></li>
+                        <li><a href="#">Q.바나나맛우유 유통기한을 어떻게 읽나요?</a></li>
+                        <li><a href="#">Q.빙그레 서체의 사용 범위를 알고싶어요</a></li>
+                    </ul>
+                    <a href="#" class="viewMore">더보기</a>
+                </article>
+                <article class="email padding50 flex flexBetween flexColumn">
+                    <h3 class="h3">이메일 상담</h3>
+                    <p class="p">빙그레에 궁금한 사항을 문의해 주세요.<br />
+                        최대한 빠른 시일내에 친절하게 답변해드리겠습니다.</p>
+                    <a href="#" class="btn1">상담하기</a>
+                </article>
+                <article class="telephone padding50">
+                    <h3 class="h3">전화 상담</h3>
+                    <a href="tel:080-022-9956">080.022.0056</a>
+                    <p class="p">월~금(공휴일 제외) 09:00~17:30</p>
+                </article>
+            </div>
+        </div>
+    </section>
+    <aside id="quick">
+        <span class="flex flexColumn flexCenter">
+            <a href="https://brand.naver.com/binggrae" class="shop" target="_blank">SHOP</a>
+            <a href="#title" class="top">맨위로 가기</a>
+        </span>
+    </aside>
+</main>
+    <!--하단영역-->
+<footer>
+    <div class="inner padding50 flex flexBetween">
+        <div class="left flex flexColumn flexBetween">
+        <h1><a href="#">빙그레</a></h1>
+            <address class="p">회사명 : 빙그레<span class="br"></span>
+                경기도 남양주시 다산동 4344-3 / 경기도 남양주시 다산순환로 45(다산동)
+            </address>
+            <p class="copyrighy p">ⓒ Binggrae all rights reserved</p>
+            </div>
+            <div class="right flex flexColumn flexBetween">
+                <ul class="personal flex">
+                    <li><a href="#">개인정보처리방침</a></li>
+                    <li><a href="#">오시는길</a></li>
+                </ul>
+            <div class="bottom flex">
+                <ul class="sns flex">
+                    <li><a href="#">인스타그램</a></li>
+                    <li><a href="#">유튜브</a></li>
+                    <li><a href="#">tft mall</a></li>
+            </ul>
+                <a href="#">Flagship store <strong>Soft Labs</strong></a>                      
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

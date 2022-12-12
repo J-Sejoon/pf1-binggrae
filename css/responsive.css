@@ -1,0 +1,115 @@
+@media screen and (max-width:1200px){
+/* 헤더   */
+    header div.inner{
+        flex-wrap: nowrap;
+    }
+    header .inner h1{
+        order: 1;
+    }
+    header .inner ul.gnb{
+        order: 2;
+        width: 100%;
+        justify-content: center;
+    }
+    header .inner ul.gnb > li > h2 a{
+        font-size: 16px;
+    }
+    header .inner ul.enb{
+        order: 3;
+    }
+        
+    /*  타이틀  */
+    #title{
+        min-height: 36.45833333333333vw;
+        height: 100vw;
+    }
+    #title::before{
+        width: 78.54166666666667vw;
+        height: 20.20833333333333vw;
+        margin-top: 3.125vw;
+    }
+    #title form.search{
+        width: 36.4583vw;
+        min-width:600px;
+    }
+    #title ul.hash{
+        column-gap: 20px;
+    }
+        
+    /* 빙그레맛   */
+    #taste .inner ul.list li{
+        width: calc((100% / 3) - (50px / 3));
+    }
+        
+    /* 브랜드샵   */
+    #shop .inner ul.list{
+        flex-wrap: wrap;
+    }
+    #shop .inner ul.list li{
+        width: calc(100% / 3 - 20px / 3);
+    }
+        
+    /* 커뮤니티   */
+    #community .inner > article{
+        width: 90%;
+    }
+    #community .inner div article ul li{
+        width: calc(100%);
+        line-height: 1.5;
+        padding: 10px 0;  
+    }
+    #community .inner div article:not(.faq){
+        width: calc(100%);
+    }
+}
+@media screen and (max-width:768px){ /*max-width 이하 미디어쿼리 */ 
+    header .inner ul.gnb{
+        display: none;
+    }
+    header .inner ul.tnb{
+        display: none;
+    }
+    /* 타이틀 */
+    #title form.search{
+        min-width:90% !important;
+    }
+
+    /* 빙그레맛  */
+    #taste .inner ul.list li{
+        width: calc((100% / 2) - (50px / 2));
+    }
+    /* 브랜드샵   */
+    #shop::before{
+        display: none;
+    }
+    #shop .inner ul.list{
+        flex-wrap:wrap; 
+    }
+    #shop .inner ul.list li{
+        width: calc(100% / 2 - 10px / 2);
+    }
+        
+    /* 커뮤니티   */
+    #community .inner div{
+        width: calc(100%);
+        gap: initial;
+        box-shadow: 0 0 0 transparent;
+        row-gap: 50px;
+        padding: 0;
+    }
+
+    /*   하단   */
+    footer .inner{
+        display: block;
+        height: auto;
+    }
+    footer .inner .left address{
+        transform: translateY(0px);
+    }
+    footer .inner .right{
+        align-items: flex-start;
+    }
+    footer .inner .right .bottom{
+        margin-top:20px;
+    }    
+}
